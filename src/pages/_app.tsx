@@ -7,6 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
+        <title>My Trips</title>
         <link rel="shortcut icon" href="favicon.ico" type="/img/icon-512.png" />
         <link
           rel="apple-touch-icon"
@@ -17,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="theme-color" content="#06092b" />
         <meta
           name="description"
-          content="A simple project started to work with TypeScript, React, NextJS and Styled-Components"
+          content="A simple project to show my favorite spots in the world."
         />
         <meta
           name="viewport"
