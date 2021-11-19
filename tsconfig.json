@@ -21,8 +21,9 @@
     "baseUrl": "./src",
     "paths": {
       "@/components/*": ["components/*"],
-      "@/pages/*": ["pages/*"],
       "@/template/*": ["template/*"],
+      "@/pages/*": ["pages/*"],
+      "@/graphql/*": ["graphql/*"],
       "@/styles/*": ["styles/*"]
     }
   },
@@ -35,3 +36,4 @@
     "node_modules"
   ]
 }
+
