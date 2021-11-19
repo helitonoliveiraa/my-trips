@@ -19,6 +19,8 @@
   "dependencies": {
     "@styled-icons/bootstrap": "^10.34.0",
     "cross-env": "^7.0.3",
+    "graphql": "^16.0.1",
+    "graphql-request": "^3.6.1",
     "leaflet": "^1.7.1",
     "next": "12.0.4",
     "next-pwa": "^5.4.0",
