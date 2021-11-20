@@ -4,6 +4,7 @@ import { client } from 'graphql/client';
 
 import { PageTemplate } from '@/template/Page';
 import { GET_PAGES, GET_PAGE_BY_SLUG } from '@/graphql/queries';
+import { GetPageBySlugQuery, GetPagesQuery } from '@/graphql/renerated/graphql';
 
 type Page = {
   id: string;
@@ -29,7 +30,7 @@ export default function About({ page }: AboutPros) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { pages } = await client.request(GET_PAGES, {
+  const { pages } = await client.request<GetPagesQuery>(GET_PAGES, {
     first: 3,
   });
 
@@ -48,7 +49,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { page } = await client.request(GET_PAGE_BY_SLUG, {
+  const { page } = await client.request<GetPageBySlugQuery>(GET_PAGE_BY_SLUG, {
     slug: `${params?.slug}`,
   });
 
