@@ -1,3 +1,4 @@
+import Router from 'next/router';
 import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 
 type Place = {
@@ -33,6 +34,11 @@ export function Map({ places }: MapProps) {
             key={`place-${place.id}`}
             position={[latitude, longitude]}
             title={place.name}
+            eventHandlers={{
+              click: () => {
+                Router.push(`/place/${place.slug}`);
+              },
+            }}
           />
         );
       })}
