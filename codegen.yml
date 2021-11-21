@@ -2,7 +2,7 @@ overwrite: true
 schema: "https://api-us-east-1.graphcms.com/v2/ckw595trg02xy01xxbsgm9818/master"
 documents: "src/graphql/**"
 generates:
-  src/graphql/renerated/graphql.ts:
+  src/graphql/generated/graphql.ts:
     plugins:
       - "typescript"
       - "typescript-operations"
