@@ -23,7 +23,7 @@ type Place = {
   };
   description?: {
     html: string;
-    text: string;
+    text?: string;
   };
   gallery: Gallery[];
 };
