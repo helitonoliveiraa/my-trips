@@ -1,5 +1,7 @@
 import Router from 'next/router';
-import { MapContainer, TileLayer, Marker } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, MapConsumer } from 'react-leaflet';
+
+import * as S from './styles';
 
 type Place = {
   id: string;
@@ -35,29 +37,51 @@ const CustomTileLayer = () => {
 
 export function Map({ places }: MapProps) {
   return (
-    <MapContainer
-      center={[51.505, -0.09]}
-      zoom={3}
-      style={{ width: '100%', height: '100%' }}
-    >
-      <CustomTileLayer />
+    <S.Container>
+      <MapContainer
+        center={[51.505, -0.09]}
+        zoom={3}
+        minZoom={3}
+        maxBounds={[
+          [-180, 180],
+          [180, -180],
+        ]}
+        style={{ width: '100%', height: '100%' }}
+      >
+        <MapConsumer>
+          {map => {
+            const width =
+              window.innerWidth ||
+              document.documentElement.clientWidth ||
+              document.body.clientWidth;
 
-      {places?.map(place => {
-        const { latitude, longitude } = place.location;
+            if (width < 768) {
+              map.setMinZoom(1);
+            }
 
-        return (
-          <Marker
-            key={`place-${place.id}`}
-            position={[latitude, longitude]}
-            title={place.name}
-            eventHandlers={{
-              click: () => {
-                Router.push(`/place/${place.slug}`);
-              },
-            }}
-          />
-        );
-      })}
-    </MapContainer>
+            return null;
+          }}
+        </MapConsumer>
+
+        <CustomTileLayer />
+
+        {places?.map(place => {
+          const { latitude, longitude } = place.location;
+
+          return (
+            <Marker
+              key={`place-${place.id}`}
+              position={[latitude, longitude]}
+              title={place.name}
+              eventHandlers={{
+                click: () => {
+                  Router.push(`/place/${place.slug}`);
+                },
+              }}
+            />
+          );
+        })}
+      </MapContainer>
+    </S.Container>
   );
 }
