@@ -34,15 +34,15 @@ export function HomeTemplate({ places }: HomeTemplateProps) {
       <NextSeo
         title="My Trips"
         description="A simple project to show my favorite spots in the world."
-        canonical="https://my-trips.helitonoliveira.com.br" // Here you always put the origin URL
+        canonical="https://my-trips-ashen.vercel.app" // Here you always put the origin URL
         openGraph={{
-          url: 'https://my-trips.helitonoliveira.com.br',
+          url: 'https://my-trips-ashen.vercel.app',
           title: 'My Trips',
           description:
             'A simple project to show in a map the places that I went and show more informations and photos when clicked.',
           images: [
             {
-              url: '"https://my-trips.helitonoliveira.com.br"/img/cover.png',
+              url: 'https://my-trips-ashen.vercel.app/img/cover.png',
               width: 1280,
               height: 720,
               alt: 'My Trips',

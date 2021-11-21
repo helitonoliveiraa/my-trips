@@ -2,7 +2,7 @@ export default {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: '',
+    url: 'https://my-trips-ashen.vercel.app',
     site_name: 'My trips',
   },
   twitter: {
