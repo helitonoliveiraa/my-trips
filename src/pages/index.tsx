@@ -34,8 +34,6 @@ export default function Home({ places }: HomeProps) {
 export const getStaticProps: GetStaticProps = async () => {
   const { places } = await client.request<GetPlacesQuery>(GET_PLACES);
 
-  console.log(JSON.stringify(places, null, 2));
-
   return {
     props: {
       places,

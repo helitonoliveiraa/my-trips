@@ -4,7 +4,7 @@ import { client } from 'graphql/client';
 
 import { PageTemplate } from '@/template/Page';
 import { GET_PAGES, GET_PAGE_BY_SLUG } from '@/graphql/queries';
-import { GetPageBySlugQuery, GetPagesQuery } from '@/graphql/renerated/graphql';
+import { GetPageBySlugQuery, GetPagesQuery } from '@/graphql/generated/graphql';
 
 type Page = {
   id: string;
@@ -58,8 +58,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       notFound: true,
     };
   }
-
-  console.log(JSON.stringify(page, null, 2));
 
   return {
     props: {

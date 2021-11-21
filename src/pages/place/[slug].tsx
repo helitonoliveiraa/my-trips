@@ -23,7 +23,7 @@ type Place = {
     latitude: number;
     longitude: number;
   };
-  description: {
+  description?: {
     html: string;
   };
   gallery: Gallery[];

@@ -18,9 +18,7 @@ export function PageTemplate({ page }: PageTemplateProps) {
       <LinkWrapper href="/">
         <XCircle />
       </LinkWrapper>
-
       <h1>{page.heading}</h1>
-
       <div
         dangerouslySetInnerHTML={{
           __html: page.body.html,
